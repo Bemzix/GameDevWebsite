@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ArckoGames - Where Creativity Meets Gaming Innovation">
+  <meta name="author" content="Bemzix, ArckoGames">
   <title>ArckoGames - Where Creativity Meets Gaming</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
     * {
@@ -15,239 +18,240 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: #fff;
-      background: linear-gradient(135deg, #1d2b3a, #213d53, #2e4b65); /* Dark polar blending gradient */
+      background-color: #121212;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
     a {
       text-decoration: none;
       color: inherit;
+      transition: color 0.3s ease;
     }
 
     ul {
       list-style: none;
     }
 
-    /* Header Navigation */
+    /* Header */
     .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       background: rgba(18, 18, 18, 0.9);
-      padding: 1rem 2rem;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
     }
 
     .nav-links a {
       font-weight: 500;
-      transition: color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .nav-links a:hover {
-      color: #8f94fb;
+      color: #ff7b7b;
     }
 
     /* Hero Section */
     .hero {
       height: 100vh;
+      background: url('https://example.com/forest.jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
       color: #fff;
       position: relative;
       padding: 2rem;
+      animation: fadeIn 2s ease;
     }
 
     .hero h1 {
-      font-size: 4rem;
-      animation: fadeIn 1.5s ease;
+      font-size: 4.5rem;
       margin-bottom: 1rem;
+      animation: slideUp 1.5s ease;
     }
 
     .hero p {
-      font-size: 1.5rem;
-      animation: fadeIn 2s ease;
+      font-size: 1.6rem;
       margin-bottom: 2rem;
+      animation: fadeIn 2s ease 0.5s;
     }
 
     .hero .btn {
       padding: 1rem 3rem;
-      background: #fff;
-      color: #4e54c8;
+      background: #ff7b7b;
+      color: #fff;
       font-weight: bold;
       border-radius: 5px;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
       transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .hero .btn:hover {
       transform: scale(1.1);
-      background: #f0f0f0;
+      background: #ff5959;
+    }
+
+    /* Sidebar for Social Media */
+    .social-sidebar {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      z-index: 1000;
+      padding: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-sidebar a {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-color: #444;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .social-sidebar a:hover {
+      background-color: #ff7b7b;
+    }
+
+    .social-sidebar img {
+      width: 24px;
+      height: 24px;
     }
 
     /* About Section */
     .about {
       height: 100vh;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      padding: 2rem;
-      background: #1e1e1e;
-      color: #fff;
-      text-align: center;
-    }
-
-    .about-content {
-      max-width: 800px;
+      align-items: center;
+      background: linear-gradient(45deg, #283e51, #1c2b36);
+      padding: 4rem 2rem;
     }
 
     .about h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      animation: slideIn 1.5s ease;
     }
 
     .about p {
       font-size: 1.2rem;
       line-height: 1.6;
-      animation: fadeIn 2s ease;
-    }
-
-    /* Blog Section */
-    .blog {
-      background: #2e2e2e;
-      padding: 2rem;
-      color: #fff;
+      max-width: 800px;
       text-align: center;
     }
 
-    .blog h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      animation: slideIn 1.5s ease;
-    }
-
-    .blog-posts {
+    .about-buttons {
       display: flex;
-      flex-wrap: wrap;
       gap: 2rem;
-      justify-content: center;
+      margin-top: 3rem;
     }
 
-    .blog-post {
-      background: #3c3c3c;
-      padding: 1.5rem;
-      width: 300px;
+    .about-btn {
+      padding: 1rem 2rem;
+      background-color: #ff7b7b;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .about-btn:hover {
+      transform: translateY(-5px);
+      background-color: #ff5959;
+    }
+
+    /* Services Section */
+    .services {
+      background: #121212;
+      padding: 6rem 2rem;
+      color: #fff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .service-card {
+      background: #1f1f1f;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      width: 300px;
+      margin: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .blog-post:hover {
+    .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     }
 
-    .blog-post img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-    .blog-post h3 {
-      margin: 1rem 0;
+    .service-card h3 {
       font-size: 1.5rem;
-    }
-
-    .blog-post p {
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .blog-post a {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #8f94fb;
-      color: #fff;
-      padding: 0.5rem 1.5rem;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .blog-post a:hover {
-      background: #4e54c8;
-    }
-
-    /* Contact Section */
-    .contact {
-      background: #1d2b3a;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 2.5rem;
       margin-bottom: 1rem;
-      animation: slideIn 1.5s ease;
     }
 
-    .contact p {
-      font-size: 1.2rem;
-      line-height: 1.6;
+    .service-card p {
+      font-size: 1rem;
     }
 
-    .contact a {
-      color: #8f94fb;
+    /* Footer */
+    .footer {
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .footer a {
+      color: #ff7b7b;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
-    .contact a:hover {
-      color: #4e54c8;
-    }
-
-    /* Social Media Bar */
-    .social-media {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-media a {
-      display: block;
-      width: 40px;
-      height: 40px;
-    }
-
-    .social-media img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      transition: transform 0.3s ease;
-    }
-
-    .social-media img:hover {
-      transform: scale(1.1);
+    .footer a:hover {
+      color: #ff5959;
     }
 
     /* Animations */
@@ -262,17 +266,20 @@
       }
     }
 
-    @keyframes slideIn {
+    @keyframes slideUp {
       from {
-        transform: translateX(-100%);
+        opacity: 0;
+        transform: translateY(20px);
       }
       to {
-        transform: translateX(0);
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="logo">ArckoGames</div>
@@ -281,7 +288,6 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -296,46 +302,54 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <h2>About Us</h2>
-      <p>ArckoGames is a leading indie game development company led by Bemzix. We create immersive, story-driven experiences that push the boundaries of gaming.</p>
-    </div>
-  </section>
-
-  <!-- Blog Section -->
-  <section id="blog" class="blog">
-    <h2>Latest Posts</h2>
-    <div class="blog-posts">
-      <div class="blog-post">
-        <img src="https://via.placeholder.com/300" alt="Blog Post 1">
-        <h3>New Game Release: The Abyss</h3>
-        <p>Our newest game, The Abyss, has been released! Explore the mysterious underworld filled with danger and mystery.</p>
-        <a href="#">Read More</a>
-      </div>
-      <div class="blog-post">
-        <img src="https://via.placeholder.com/300" alt="Blog Post 2">
-        <h3>Upcoming Game Features</h3>
-        <p>Check out some of the exciting features coming to our next game in 2025!</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>Have questions or want to collaborate? Feel free to reach out!</p>
-    <p>Email us at <a href="mailto:contact@arkcogames.com">contact@arkcogames.com</a></p>
-  </section>
-
-  <!-- Social Media Bar -->
-  <div class="social-media">
-    <a href="https://x.com/ArkcoGames" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Twitter_Logo_2021.svg" alt="Twitter"></a>
-    <a href="https://www.instagram.com/arkcogames/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2022.svg" alt="Instagram"></a>
-    <a href="https://www.youtube.com/@ArkcoGames" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube"></a>
-    <a href="https://discord.gg/arkcogames" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Discord_logo_2021.svg" alt="Discord"></a>
+  <!-- Social Sidebar -->
+  <div class="social-sidebar">
+    <a href="https://x.com/ArkcoGames" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Twitter_Logo_2021.svg" alt="Twitter">
+    </a>
+    <a href="https://www.instagram.com/arkcogames/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Instagram_logo_2022.svg/512px-Instagram_logo_2022.svg.png" alt="Instagram">
+    </a>
+    <a href="https://www.youtube.com/@ArkcoGames" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.jpg" alt="YouTube">
+    </a>
+    <a href="https://discord.com/invite/arkcogames" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Discord_logo_2023.svg" alt="Discord">
+    </a>
   </div>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>At ArckoGames, we are committed to delivering innovative, creative, and immersive experiences that push the boundaries of gaming. Our team is passionate about crafting unique worlds and stories that engage and inspire our audience.</p>
+    <div class="about-buttons">
+      <button class="about-btn">Learn More</button>
+      <button class="about-btn">Our Projects</button>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-card">
+      <h3>Game Development</h3>
+      <p>We offer full-cycle game development services, from concept to final release, with a focus on immersive storytelling and cutting-edge graphics.</p>
+    </div>
+    <div class="service-card">
+      <h3>Game Design</h3>
+      <p>Our expert designers create engaging and innovative gameplay experiences that captivate players and make games unforgettable.</p>
+    </div>
+    <div class="service-card">
+      <h3>Consulting</h3>
+      <p>We provide consultation to game studios, helping them refine their development processes, optimize their workflows, and maximize their success.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ArckoGames | All Rights Reserved</p>
+    <p><a href="mailto:info@arkcogames.com">Contact Us</a></p>
+  </footer>
+
 </body>
 </html>
