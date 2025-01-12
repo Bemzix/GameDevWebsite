@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ArckoGames</title>
+  <title>ArckoGames - Where Creativity Meets Gaming</title>
   <style>
-    /* General Reset */
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -13,163 +13,261 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: #fff;
       background-color: #121212;
-      line-height: 1.6;
     }
 
-    /* Navigation Styles */
-    nav {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Header Navigation */
+    .header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem;
+      background: rgba(18, 18, 18, 0.9);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 100;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    nav ul li {
-      margin: 0 1rem;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
+    .logo {
+      font-size: 1.8rem;
       font-weight: bold;
-      transition: color 0.3s;
+      color: #fff;
     }
 
-    nav ul li a:hover {
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
       color: #8f94fb;
     }
 
     /* Hero Section */
     .hero {
-      position: relative;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow: hidden;
-    }
-
-    /* YouTube Background */
-    .youtube-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .youtube-bg iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none; /* Makes iframe unclickable */
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
+      background-image: url('path_to_your_forest_image.jpg');
+      background-size: cover;
+      background-position: center;
       color: #fff;
+      position: relative;
+      padding: 2rem;
+      transition: background 0.5s ease;
     }
 
     .hero h1 {
       font-size: 4rem;
+      animation: fadeIn 1.5s ease;
       margin-bottom: 1rem;
     }
 
     .hero p {
       font-size: 1.5rem;
+      animation: fadeIn 2s ease;
       margin-bottom: 2rem;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      background: #8f94fb;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 25px;
-      transition: background 0.3s;
+    .hero .btn {
+      padding: 1rem 3rem;
+      background: #fff;
+      color: #4e54c8;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      cursor: pointer;
     }
 
-    .btn:hover {
-      background: #4e54c8;
+    .hero .btn:hover {
+      transform: scale(1.1);
+      background: #f0f0f0;
     }
 
     /* About Section */
-    #about {
-      padding: 5rem 2rem;
-      background: #1d1d1d;
+    .about {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: #1e1e1e;
+      color: #fff;
       text-align: center;
     }
 
-    #about h2 {
+    .about-content {
+      max-width: 800px;
+    }
+
+    .about h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
-    #about p {
+    .about p {
       font-size: 1.2rem;
-      line-height: 1.8;
+      line-height: 1.6;
     }
 
-    /* Footer Section */
-    footer {
+    /* Buttons for About Us section */
+    .about-buttons {
+      margin-top: 2rem;
+    }
+
+    .about-buttons a {
+      padding: 1rem 2rem;
+      margin: 1rem;
+      background: #4e54c8;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .about-buttons a:hover {
+      background: #8f94fb;
+      transform: scale(1.05);
+    }
+
+    /* Social Media Bar */
+    .social-media {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-media a {
+      font-size: 1.5rem;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    .social-media a:hover {
+      color: #8f94fb;
+    }
+
+    /* Services Section */
+    .services {
+      height: 100vh;
+      background: linear-gradient(to right, #121212, #1e1e1e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 2rem;
-      text-align: center;
-      background: #000;
-      color: #888;
     }
 
-    footer p {
-      font-size: 0.9rem;
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: #2e2e2e;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .footer {
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .footer a {
+      color: #8f94fb;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #4e54c8;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <h1>ArckoGames</h1>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">ArckoGames</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
-    <!-- YouTube Video Background -->
-    <div class="youtube-bg">
-      <iframe
-        src="https://www.youtube.com/embed/ZxTAuyTuxdo?autoplay=1&mute=1&loop=1&playlist=ZxTAuyTuxdo"
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <!-- Hero Content -->
-    <div class="hero-content">
+    <div>
       <h1>Welcome to ArckoGames</h1>
       <p>Where creativity meets gaming innovation.</p>
       <a href="#about" class="btn">Learn More</a>
@@ -177,17 +275,21 @@
   </section>
 
   <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      At ArckoGames, we are passionate about crafting unique and immersive gaming
-      experiences. With a team of talented developers, designers, and storytellers, we strive to push the boundaries of creativity and innovation in every game we create.
-    </p>
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>About Us</h2>
+      <p>ArckoGames is a leading indie game development company led by Bemzix. We create immersive, story-driven experiences that push the boundaries of gaming.</p>
+      <div class="about-buttons">
+        <a href="#team">Our Team</a>
+        <a href="#games">Current Games</a>
+        <a href="#future">Future Plans</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 ArckoGames. All Rights Reserved.</p>
-  </footer>
-</body>
-</html>
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>What We Offer</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>
