@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background-color: #121212;
+      color: #333;
+      background-color: #f7f7f7;
     }
 
     a {
@@ -33,7 +33,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(18, 18, 18, 0.9);
+      background: rgba(0, 123, 255, 0.9);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -43,7 +43,7 @@
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
       color: #fff;
     }
@@ -56,10 +56,11 @@
     .nav-links a {
       font-weight: 500;
       transition: color 0.3s ease;
+      color: #fff;
     }
 
     .nav-links a:hover {
-      color: #8f94fb;
+      color: #f0a500;
     }
 
     /* Hero Section */
@@ -82,18 +83,20 @@
       font-size: 4rem;
       animation: fadeIn 1.5s ease;
       margin-bottom: 1rem;
+      color: #ff6f61; /* Lively Red */
     }
 
     .hero p {
       font-size: 1.5rem;
       animation: fadeIn 2s ease;
       margin-bottom: 2rem;
+      color: #fff;
     }
 
     .hero .btn {
       padding: 1rem 3rem;
-      background: #fff;
-      color: #4e54c8;
+      background: #ff6f61;
+      color: #fff;
       font-weight: bold;
       border-radius: 5px;
       transition: transform 0.3s ease, background-color 0.3s ease;
@@ -102,7 +105,7 @@
 
     .hero .btn:hover {
       transform: scale(1.1);
-      background: #f0f0f0;
+      background: #ff3b30; /* Brighter Red */
     }
 
     /* About Section */
@@ -112,7 +115,7 @@
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      background: #1e1e1e;
+      background: #2ecc71; /* Green */
       color: #fff;
       text-align: center;
     }
@@ -124,6 +127,7 @@
     .about h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #fff;
     }
 
     .about p {
@@ -139,7 +143,7 @@
     .about-buttons a {
       padding: 1rem 2rem;
       margin: 1rem;
-      background: #4e54c8;
+      background: #3498db; /* Blue */
       color: #fff;
       font-weight: bold;
       border-radius: 5px;
@@ -148,7 +152,7 @@
     }
 
     .about-buttons a:hover {
-      background: #8f94fb;
+      background: #2980b9; /* Darker Blue */
       transform: scale(1.05);
     }
 
@@ -168,14 +172,14 @@
     }
 
     .social-media a:hover {
-      color: #8f94fb;
+      color: #ff6f61; /* Red Hover */
     }
 
     /* Services Section */
     .services {
       height: 100vh;
-      background: linear-gradient(to right, #121212, #1e1e1e);
-      color: #fff;
+      background: linear-gradient(to right, #f7f7f7, #f39c12); /* Yellow Gradient */
+      color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -186,6 +190,7 @@
     .services h2 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: #2c3e50;
     }
 
     .services-grid {
@@ -197,22 +202,23 @@
     }
 
     .service-card {
-      background: #2e2e2e;
+      background: #ecf0f1;
       padding: 1.5rem;
       border-radius: 10px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .service-card h3 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
+      color: #e74c3c;
     }
 
     .service-card p {
@@ -222,20 +228,20 @@
 
     /* Footer */
     .footer {
-      background: #121212;
+      background: #34495e;
       color: #fff;
       text-align: center;
       padding: 1rem;
     }
 
     .footer a {
-      color: #8f94fb;
+      color: #f39c12; /* Yellow */
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     .footer a:hover {
-      color: #4e54c8;
+      color: #e67e22; /* Orange */
     }
 
     /* Animations */
@@ -292,4 +298,30 @@
     <h2>What We Offer</h2>
     <div class="services-grid">
       <div class="service-card">
-        <h3>
+        <h3>Game Development</h3>
+        <p>We create immersive and interactive games across various genres.</p>
+      </div>
+      <div class="service-card">
+        <h3>Game Design</h3>
+        <p>Our design team focuses on creating unique and engaging experiences for players.</p>
+      </div>
+      <div class="service-card">
+        <h3>Game Publishing</h3>
+        <p>We publish games that reach a global audience and connect with players worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Bar -->
+  <div class="social-media">
+    <a href="https://facebook.com" target="_blank">FB</a>
+    <a href="https://twitter.com" target="_blank">TW</a>
+    <a href="https://instagram.com" target="_blank">IG</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ArckoGames | <a href="#contact">Contact Us</a></p>
+  </footer>
+</body>
+</html>
