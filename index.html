@@ -18,8 +18,9 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: #fff;
-      background: linear-gradient(135deg, #121212, #283e51, #1c2b36);
+      background: black;
       overflow-x: hidden; /* Prevent horizontal scrolling */
+      animation: fadeIn 3s ease-out;
     }
 
     a {
@@ -82,19 +83,21 @@
       color: #fff;
       position: relative;
       padding: 2rem;
+      animation: fadeIn 2s ease, fadeBackground 6s forwards;
+    }
+
+    .hero h1, .hero p {
       animation: fadeIn 2s ease;
     }
 
     .hero h1 {
       font-size: 4.5rem;
       margin-bottom: 1rem;
-      animation: slideUp 1.5s ease;
     }
 
     .hero p {
       font-size: 1.6rem;
       margin-bottom: 2rem;
-      animation: fadeIn 2s ease 0.5s;
     }
 
     .hero .btn {
@@ -301,14 +304,12 @@
       }
     }
 
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+    @keyframes fadeBackground {
+      0% {
+        background: black;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      100% {
+        background: navy;
       }
     }
   </style>
@@ -327,9 +328,11 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Welcome to ArckoGames</h1>
-    <p>Where Creativity Meets Gaming Innovation</p>
-    <a href="#about" class="btn">Learn More</a>
+    <div>
+      <h1>Welcome to ArckoGames</h1>
+      <p>Where Creativity Meets Gaming Innovation</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
   </section>
 
   <!-- About Us Section -->
@@ -394,10 +397,10 @@
   <!-- Footer -->
   <footer class="footer">
     <p>&copy; 2025 ArckoGames. All rights reserved.</p>
-    <p>Visit our <a href="https://www.arkcogames.com">official website</a>.</p>
     <div class="social-links">
       <a href="https://www.youtube.com/channel/ArckoGames" target="_blank">YouTube</a>
-      <a href="https://discord.gg/ArckoGames" target="_blank">Discord</a>
+      <a href="https://twitter.com/ArckoGames" target="_blank">Twitter</a>
+      <a href="https://www.instagram.com/ArckoGames" target="_blank">Instagram</a>
     </div>
   </footer>
 
