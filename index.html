@@ -18,7 +18,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       color: #fff;
-      background-color: #121212;
+      background: linear-gradient(135deg, #121212, #283e51, #1c2b36);
       overflow-x: hidden; /* Prevent horizontal scrolling */
     }
 
@@ -113,41 +113,6 @@
       background: #ff5959;
     }
 
-    /* Sidebar for Social Media */
-    .social-sidebar {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      z-index: 1000;
-      padding: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .social-sidebar a {
-      display: block;
-      width: 50px;
-      height: 50px;
-      background-color: #444;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-    }
-
-    .social-sidebar a:hover {
-      background-color: #ff7b7b;
-    }
-
-    .social-sidebar img {
-      width: 24px;
-      height: 24px;
-    }
-
     /* About Us Section */
     .about {
       height: 100vh;
@@ -155,7 +120,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(45deg, #283e51, #1c2b36);
+      background: #283e51;
       padding: 4rem 2rem;
     }
 
@@ -195,44 +160,93 @@
       background-color: #ff5959;
     }
 
-    /* Services Section */
-    .services {
+    /* Blog Posts Section */
+    .blog-posts {
       background: #121212;
       padding: 6rem 2rem;
       color: #fff;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
 
-    .services h2 {
+    .blog-posts h2 {
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
 
-    .service-card {
+    .blog-post-card {
       background: #1f1f1f;
       border-radius: 10px;
       padding: 2rem;
-      width: 300px;
       margin: 1rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      width: 250px;
+      text-align: left;
     }
 
-    .service-card:hover {
+    .blog-post-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     }
 
-    .service-card h3 {
+    .blog-post-card h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
-    .service-card p {
+    .blog-post-card p {
+      font-size: 1rem;
+    }
+
+    /* About Our Team Section */
+    .team {
+      background: #1c2b36;
+      padding: 6rem 2rem;
+      color: #fff;
+      text-align: center;
+    }
+
+    .team h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .team-members {
+      display: flex;
+      justify-content: space-around;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .team-member {
+      background: #1f1f1f;
+      border-radius: 10px;
+      padding: 2rem;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .team-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .team-member h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-member p {
       font-size: 1rem;
     }
 
@@ -241,7 +255,7 @@
       background: #121212;
       color: #fff;
       text-align: center;
-      padding: 1rem;
+      padding: 2rem;
     }
 
     .footer a {
@@ -252,6 +266,27 @@
 
     .footer a:hover {
       color: #ff5959;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      font-size: 1.5rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ff7b7b;
     }
 
     /* Animations */
@@ -283,37 +318,19 @@
   <!-- Header -->
   <header class="header">
     <div class="logo">ArckoGames</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="nav-links">
+      <a href="#about">About Us</a>
+      <a href="#blog">Blog Posts</a>
+      <a href="#team">Our Team</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero">
-    <div>
-      <h1>Welcome to ArckoGames</h1>
-      <p>Where creativity meets gaming innovation.</p>
-      <a href="#about" class="btn">Learn More</a>
-    </div>
+  <section class="hero">
+    <h1>Welcome to ArckoGames</h1>
+    <p>Where Creativity Meets Gaming Innovation</p>
+    <a href="#about" class="btn">Learn More</a>
   </section>
-
-  <!-- Social Sidebar -->
-  <div class="social-sidebar">
-    <a href="https://x.com/ArkcoGames" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Twitter_Logo_2021.svg" alt="Twitter">
-    </a>
-    <a href="https://www.instagram.com/arkcogames/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Instagram_logo_2022.svg/512px-Instagram_logo_2022.svg.png" alt="Instagram">
-    </a>
-    <a href="https://www.linkedin.com/company/arkcogames/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/LinkedIn_logo_initials.png" alt="LinkedIn">
-    </a>
-  </div>
 
   <!-- About Us Section -->
   <section id="about" class="about">
@@ -325,20 +342,52 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="service-card">
-      <h3>Game Development</h3>
-      <p>We specialize in developing engaging and innovative games across various genres, focusing on delivering immersive player experiences.</p>
+  <!-- Blog Posts Section -->
+  <section id="blog" class="blog-posts">
+    <h2>Blog Posts</h2>
+    <div class="blog-post-card">
+      <h3>Post 1</h3>
+      <p>Introduction to our latest game development process.</p>
     </div>
-    <div class="service-card">
-      <h3>Game Design</h3>
-      <p>Our design team creates beautiful and functional game environments and user interfaces, ensuring a seamless gameplay experience.</p>
+    <div class="blog-post-card">
+      <h3>Post 2</h3>
+      <p>Behind the scenes at ArckoGames: a day in the life of a game developer.</p>
     </div>
-    <div class="service-card">
-      <h3>Consultation</h3>
-      <p>We provide expert consultation for game studios, helping to optimize production, design, and marketing strategies.</p>
+    <div class="blog-post-card">
+      <h3>Post 3</h3>
+      <p>How we design immersive game worlds.</p>
+    </div>
+  </section>
+
+  <!-- About Our Team Section -->
+  <section id="team" class="team">
+    <h2>About Our Team</h2>
+    <div class="team-members">
+      <div class="team-member">
+        <img src="https://example.com/member1.jpg" alt="Member 1">
+        <h3>Member 1</h3>
+        <p>Lead Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://example.com/member2.jpg" alt="Member 2">
+        <h3>Member 2</h3>
+        <p>Game Designer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://example.com/member3.jpg" alt="Member 3">
+        <h3>Member 3</h3>
+        <p>Artist</p>
+      </div>
+      <div class="team-member">
+        <img src="https://example.com/member4.jpg" alt="Member 4">
+        <h3>Member 4</h3>
+        <p>Producer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://example.com/member5.jpg" alt="Member 5">
+        <h3>Member 5</h3>
+        <p>Sound Designer</p>
+      </div>
     </div>
   </section>
 
@@ -346,6 +395,10 @@
   <footer class="footer">
     <p>&copy; 2025 ArckoGames. All rights reserved.</p>
     <p>Visit our <a href="https://www.arkcogames.com">official website</a>.</p>
+    <div class="social-links">
+      <a href="https://www.youtube.com/channel/ArckoGames" target="_blank">YouTube</a>
+      <a href="https://discord.gg/ArckoGames" target="_blank">Discord</a>
+    </div>
   </footer>
 
 </body>
