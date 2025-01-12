@@ -5,220 +5,262 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ArckoGames - Where Creativity Meets Gaming</title>
   <style>
-    /* General styling for the body element, including default font and background color */
-    body {
-      font-family: 'Arial', sans-serif;
+    /* Global Styles */
+    * {
       margin: 0;
       padding: 0;
-      color: #333;
-      background-color: #f4f4f9; /* Light gray background */
+      box-sizing: border-box;
     }
 
-    /* Styling for the header section that remains fixed at the top of the page */
+    body {
+      font-family: 'Poppins', sans-serif; /* Modern font */
+      color: #fff;
+      background-color: #121212; /* Dark background for a sleek look */
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* Header Navigation */
     .header {
-      background: #222; /* Dark background for contrast */
-      color: #fff; /* White text */
-      padding: 1rem 0; /* Space above and below the header */
-      position: sticky; /* Makes the header stick to the top when scrolling */
-      top: 0; /* Position the sticky header at the very top */
-      z-index: 1000; /* Ensures the header stays above other content */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(18, 18, 18, 0.9); /* Semi-transparent background */
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    /* Layout for the navigation bar inside the header */
-    .navbar {
-      display: flex; /* Aligns items in a row */
-      justify-content: space-between; /* Pushes items to the far ends */
-      align-items: center; /* Vertically centers items */
-      max-width: 1200px; /* Limits the navbar width */
-      margin: 0 auto; /* Centers the navbar horizontally */
-      padding: 0 2rem; /* Adds padding to the sides */
-    }
-
-    /* Styling for the logo text in the navbar */
-    .navbar .logo {
+    .logo {
       font-size: 1.8rem;
       font-weight: bold;
+      color: #fff;
     }
 
-    /* Styling for the navigation links */
-    .navbar .nav-links {
-      list-style: none; /* Removes bullets from the list */
-      display: flex; /* Aligns links in a row */
-      gap: 1.5rem; /* Space between each link */
+    .nav-links {
+      display: flex;
+      gap: 2rem;
     }
 
-    /* Styling for each navigation link */
-    .navbar .nav-links a {
-      color: #fff; /* White text */
-      text-decoration: none; /* Removes underline */
-      font-weight: bold;
+    .nav-links a {
+      font-weight: 500;
+      transition: color 0.3s ease;
     }
 
-    /* Adds underline on hover for better user feedback */
-    .navbar .nav-links a:hover {
-      text-decoration: underline;
+    .nav-links a:hover {
+      color: #8f94fb; /* Highlight on hover */
     }
 
-    /* Hero section (the large welcome section at the top of the page) */
+    /* Hero Section */
     .hero {
-      height: 100vh; /* Full viewport height */
-      background: linear-gradient(to right, #4e54c8, #8f94fb); /* Gradient background */
-      color: #fff; /* White text */
-      display: flex; /* Centers content both vertically and horizontally */
-      justify-content: center;
+      height: 100vh;
+      display: flex;
       align-items: center;
-      text-align: center; /* Centers text */
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(to right, #4e54c8, #8f94fb); /* Gradient background */
+      color: #fff;
+      position: relative;
       padding: 2rem;
     }
 
-    /* Large heading in the hero section */
     .hero h1 {
-      font-size: 3.5rem; /* Large font size for emphasis */
-      margin-bottom: 1rem; /* Space below the heading */
-      animation: fadeIn 1.5s ease; /* Smooth fade-in animation */
+      font-size: 4rem;
+      animation: fadeIn 1.5s ease;
+      margin-bottom: 1rem;
     }
 
-    /* Paragraph in the hero section */
     .hero p {
-      font-size: 1.5rem; /* Larger font size for readability */
-      margin-bottom: 2rem; /* Space below the paragraph */
-      animation: fadeIn 2s ease; /* Fade-in effect slightly delayed */
+      font-size: 1.5rem;
+      animation: fadeIn 2s ease;
+      margin-bottom: 2rem;
     }
 
-    /* Button in the hero section */
     .hero .btn {
-      padding: 1rem 2rem; /* Adds padding inside the button */
-      background: #fff; /* White background */
-      color: #4e54c8; /* Matches the gradient color */
+      padding: 1rem 3rem;
+      background: #fff;
+      color: #4e54c8;
       font-weight: bold;
-      text-decoration: none; /* Removes underline */
-      border-radius: 5px; /* Rounded corners */
-      transition: background 0.3s ease; /* Smooth background color change on hover */
+      border-radius: 5px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
-    /* Hover effect for the button */
     .hero .btn:hover {
+      transform: scale(1.1);
       background: #f0f0f0;
     }
 
-    /* General section styling */
-    .section {
-      padding: 4rem 2rem; /* Adds vertical and horizontal spacing */
-      text-align: center; /* Centers text within the section */
-    }
-
-    /* Section headings */
-    .section h2 {
-      margin-bottom: 1rem; /* Space below the heading */
-      font-size: 2.5rem; /* Large font size */
-    }
-
-    /* Centers content within sections */
-    .container {
-      max-width: 1200px; /* Limits the width of the container */
-      margin: 0 auto; /* Centers the container */
-    }
-
-    /* Layout for features, services, and portfolio items */
-    .features, .service-list, .portfolio-gallery {
-      display: flex; /* Aligns items in a row */
-      gap: 2rem; /* Space between items */
-      justify-content: center; /* Centers items horizontally */
-      flex-wrap: wrap; /* Moves items to the next row if needed */
-    }
-
-    /* Styling for portfolio images */
-    .portfolio-item img {
-      width: 100%; /* Ensures the image takes up full width */
-      height: auto; /* Maintains aspect ratio */
-      border-radius: 10px; /* Rounded corners */
-    }
-
-    /* Contact form layout */
-    .contact-form {
+    /* About Section */
+    .about {
+      height: 100vh;
       display: flex;
-      flex-direction: column; /* Stacks items vertically */
-      gap: 1rem; /* Space between form fields */
-      max-width: 600px; /* Limits the form width */
-      margin: 0 auto; /* Centers the form */
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: #1e1e1e; /* Darker gray for contrast */
+      color: #fff;
+      text-align: center;
     }
 
-    /* Styling for input and textarea fields */
-    .contact-form input, .contact-form textarea {
-      padding: 0.8rem; /* Adds space inside the fields */
-      border: 1px solid #ddd; /* Light gray border */
-      border-radius: 5px; /* Rounded corners */
+    .about-content {
+      max-width: 800px;
     }
 
-    /* Submit button styling */
-    .contact-form button {
-      padding: 1rem 2rem; /* Adds space inside the button */
-      background: #4e54c8; /* Matches the site's color theme */
-      color: #fff; /* White text */
-      font-weight: bold;
-      border: none; /* Removes default border */
-      border-radius: 5px; /* Rounded corners */
-      cursor: pointer; /* Pointer cursor on hover */
+    .about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
-    /* Hover effect for the button */
-    .contact-form button:hover {
-      background: #8f94fb; /* Slightly lighter color */
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.6;
     }
 
-    /* Footer styling */
+    /* Services Section */
+    .services {
+      height: 100vh;
+      background: linear-gradient(to right, #121212, #1e1e1e); /* Subtle gradient */
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: #2e2e2e; /* Dark card background */
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
     .footer {
-      background: #222; /* Dark background */
-      color: #fff; /* White text */
-      text-align: center; /* Centers text */
-      padding: 1rem; /* Space inside the footer */
+      background: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
     }
 
-    /* Keyframe animation for fade-in effect */
+    .footer a {
+      color: #8f94fb;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #4e54c8;
+    }
+
+    /* Animations */
     @keyframes fadeIn {
       from {
-        opacity: 0; /* Starts invisible */
-        transform: translateY(10px); /* Moves slightly downward */
+        opacity: 0;
+        transform: translateY(10px);
       }
       to {
-        opacity: 1; /* Ends fully visible */
-        transform: translateY(0); /* Moves back to original position */
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Header containing the navigation bar -->
+  <!-- Header -->
   <header class="header">
-    <nav class="navbar">
-      <div class="logo">ArckoGames</div> <!-- Company name/logo -->
+    <div class="logo">ArckoGames</div>
+    <nav>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero section (welcome area) -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <div class="hero-content">
+    <div>
       <h1>Welcome to ArckoGames</h1>
-      <p>We craft immersive gaming experiences that leave a mark.</p>
-      <a href="#about" class="btn">Discover More</a>
+      <p>Where creativity meets gaming innovation.</p>
+      <a href="#about" class="btn">Learn More</a>
     </div>
   </section>
 
-  <!-- About section -->
-  <section id="about" class="section">
-    <div class="container">
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-content">
       <h2>About Us</h2>
-      <p>Hi, I'm Bemzix, the head of ArckoGames...</p>
+      <p>ArckoGames is a leading indie game development company led by Bemzix. We create immersive, story-driven experiences that push the boundaries of gaming.</p>
     </div>
   </section>
 
-  <!-- Remaining sections omitted for brevity -->
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>What We Offer</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Game Development</h3>
+        <p>Crafting unique, innovative gaming experiences for all audiences.</p>
+      </div>
+      <div class="service-card">
+        <h3>Storytelling</h3>
+        <p>Engaging narratives that captivate players and leave a lasting impression.</p>
+      </div>
+      <div class="service-card">
+        <h3>Design</h3>
+        <p>Beautiful visuals and smooth gameplay mechanics designed for players.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ArckoGames | Designed by Bemzix</p>
+    <p><a href="#">Privacy Policy</a></p>
+  </footer>
 </body>
 </html>
